@@ -29,29 +29,15 @@
 
     <!-- Toolbar -->
     <div class="toolbar" id="toolbar">
-        <div class="toolbar-left">
-            <button class="btn btn-primary" id="btnSave" onclick="saveChanges()" title="Lưu thay đổi">
-                <span class="btn-icon">💾</span> Lưu
-            </button>
-            <button class="btn btn-secondary" id="btnUndo" onclick="undoChange()" title="Hoàn tác">
-                <span class="btn-icon">↩</span> Hoàn tác
-            </button>
-            <div class="toolbar-separator"></div>
-            <button class="btn btn-accent" id="btnExportExcel" onclick="exportExcel()" title="Xuất Excel">
-                <span class="btn-icon">📊</span> Xuất Excel
-            </button>
-            <button class="btn btn-accent" id="btnPrint" onclick="printChart()" title="In sơ đồ">
-                <span class="btn-icon">🖨️</span> In
-            </button>
-        </div>
-        <div class="toolbar-center">
+        <div class="toolbar-search">
             <div class="search-box" id="searchBox">
                 <span class="search-icon">🔍</span>
                 <input type="text" id="searchInput" placeholder="Tìm tên, cấp hàm, chức vụ..." oninput="searchPerson(this.value)">
+                <span class="search-count" id="searchCount" style="display:none"></span>
                 <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none">✕</button>
             </div>
         </div>
-        <div class="toolbar-right">
+        <div class="toolbar-actions">
             <div class="zoom-controls">
                 <button class="btn btn-sm" onclick="zoomOut()">−</button>
                 <span id="zoomLevel">100%</span>

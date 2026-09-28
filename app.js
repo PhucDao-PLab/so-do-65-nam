@@ -919,9 +919,15 @@ function cancelSwap() {
 
 function searchPerson(query) {
     const clearBtn = document.getElementById('searchClear');
+    const countEl = document.getElementById('searchCount');
+    const chart = document.getElementById('chartContainer');
+
     clearBtn.style.display = query ? 'block' : 'none';
 
+    // Clear previous highlights
     document.querySelectorAll('.seat.highlighted').forEach(el => el.classList.remove('highlighted'));
+    chart.classList.remove('search-active');
+    countEl.style.display = 'none';
 
     if (!query || query.length < 2) return;
 
@@ -944,14 +950,22 @@ function searchPerson(query) {
         }
     }
 
-    if (found === 0 && query.length >= 2) {
-        showToast(`Không tìm thấy "${query}"`, 'info');
+    // Activate search dimming mode
+    if (found > 0) {
+        chart.classList.add('search-active');
+        countEl.textContent = `${found} kết quả`;
+        countEl.style.display = 'inline';
+    } else if (query.length >= 2) {
+        countEl.textContent = 'Không tìm thấy';
+        countEl.style.display = 'inline';
     }
 }
 
 function clearSearch() {
     document.getElementById('searchInput').value = '';
     document.getElementById('searchClear').style.display = 'none';
+    document.getElementById('searchCount').style.display = 'none';
+    document.getElementById('chartContainer').classList.remove('search-active');
     document.querySelectorAll('.seat.highlighted').forEach(el => el.classList.remove('highlighted'));
 }
 
