@@ -1099,9 +1099,23 @@ body {
     }
     
     .chart-container {
-        padding: 12px 8px 40px;
+        display: block;
+        padding: 12px 0 40px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+    }
+    
+    .seating-zone {
+        display: block;
+        width: fit-content;
+        min-width: 100%;
+        margin: 0 auto 8px;
+    }
+    
+    .stage {
+        width: fit-content;
+        min-width: 90%;
+        margin: 0 auto 20px;
     }
     
     .seat-name { font-size: 7.5px; }
