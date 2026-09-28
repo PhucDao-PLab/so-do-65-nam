@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sơ đồ chỗ ngồi - Lễ kỷ niệm 65 năm Cảnh sát PCCC & CNCH</title>
+    <meta name="description" content="Sơ đồ bố trí chỗ ngồi buổi lễ kỷ niệm 65 năm ngày truyền thống lực lượng Cảnh sát PCCC và CNCH">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="header-badge">
+                <div class="badge-icon">★</div>
+            </div>
+            <div class="header-text">
+                <h1>SƠ ĐỒ CHỖ NGỒI</h1>
+                <p class="subtitle">Lễ kỷ niệm 65 năm ngày truyền thống lực lượng Cảnh sát PCCC và CNCH</p>
+                <p class="date-info">04/10/2026 • Hội trường Cục C07</p>
+            </div>
+            <div class="header-stats" id="headerStats">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Toolbar -->
+    <div class="toolbar" id="toolbar">
+        <div class="toolbar-left">
+            <button class="btn btn-primary" id="btnSave" onclick="saveChanges()" title="Lưu thay đổi">
+                <span class="btn-icon">💾</span> Lưu
+            </button>
+            <button class="btn btn-secondary" id="btnUndo" onclick="undoChange()" title="Hoàn tác">
+                <span class="btn-icon">↩</span> Hoàn tác
+            </button>
+            <div class="toolbar-separator"></div>
+            <button class="btn btn-accent" id="btnExportExcel" onclick="exportExcel()" title="Xuất Excel">
+                <span class="btn-icon">📊</span> Xuất Excel
+            </button>
+            <button class="btn btn-accent" id="btnPrint" onclick="printChart()" title="In sơ đồ">
+                <span class="btn-icon">🖨️</span> In
+            </button>
+        </div>
+        <div class="toolbar-center">
+            <div class="search-box" id="searchBox">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Tìm tên, cấp hàm, chức vụ..." oninput="searchPerson(this.value)">
+                <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none">✕</button>
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <div class="zoom-controls">
+                <button class="btn btn-sm" onclick="zoomOut()">−</button>
+                <span id="zoomLevel">100%</span>
+                <button class="btn btn-sm" onclick="zoomIn()">+</button>
+                <button class="btn btn-sm" onclick="zoomReset()">↺</button>
+            </div>
+            <div class="toolbar-separator"></div>
+            <button class="btn btn-sm" id="btnToggleCodes" onclick="toggleSeatCodes()" title="Hiện/ẩn mã ghế">
+                <span class="btn-icon">#</span>
+            </button>
+            <button class="btn btn-sm" id="btnToggleLegend" onclick="toggleLegend()" title="Chú thích">
+                <span class="btn-icon">ℹ</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Legend Panel -->
+    <div class="legend-panel" id="legendPanel">
+        <h3>Chú thích màu sắc</h3>
+        <div class="legend-grid">
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-1)"></span>
+                <span>I. Lãnh đạo Bộ</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-2)"></span>
+                <span>II. Nguyên lãnh đạo Bộ</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-3)"></span>
+                <span>III. Lãnh đạo Tổng Cục/Cục (nghỉ hưu)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-4)"></span>
+                <span>IV. Lãnh đạo Phòng C07 (nghỉ hưu)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-5)"></span>
+                <span>V-VI. Nguyên lãnh đạo C07 / KH376</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-7)"></span>
+                <span>VII-VIII. Đại diện đơn vị / địa phương</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-section-9)"></span>
+                <span>IX-XI. Hiệp hội, địa phương, báo chí</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-c07)"></span>
+                <span>Lãnh đạo Cục C07 (đương nhiệm)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-cbcs)"></span>
+                <span>CBCS Cục C07</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: var(--color-empty)"></span>
+                <span>Ghế trống</span>
+            </div>
+        </div>
+        <button class="btn btn-sm" onclick="toggleLegend()" style="margin-top:12px">Đóng</button>
+    </div>
+
+    <!-- Main Seating Chart -->
+    <main class="chart-container" id="chartContainer">
+        <!-- Stage -->
+        <div class="stage" id="stage">
+            <div class="stage-inner">
+                <div class="stage-label">SÂN KHẤU</div>
+                <div class="stage-sub">Lễ kỷ niệm 65 năm PCCC & CNCH</div>
+            </div>
+        </div>
+
+        <!-- Front rows WITH tables (3 dãy đầu có bàn) -->
+        <div class="seating-zone table-zone" id="tableZone">
+            <div class="zone-label"><span>DÃY CÓ BÀN</span></div>
+            <div class="seating-area" id="tableSeating">
+                <!-- 3 rows with tables, populated by JS -->
+            </div>
+        </div>
+
+        <!-- Back rows WITHOUT tables (8 dãy sau không bàn) -->
+        <div class="seating-zone back-zone" id="backZone">
+            <div class="zone-label"><span>DÃY KHÔNG BÀN</span></div>
+            <div class="seating-area" id="backSeating">
+                <!-- 8 rows without tables, populated by JS -->
+            </div>
+        </div>
+
+        <!-- Entrance -->
+        <div class="entrance" id="entrance">
+            <div class="entrance-door left">🚪 CỬA TRÁI</div>
+            <div class="entrance-main">
+                <div class="entrance-arrow">↓</div>
+                <div class="entrance-label">LỐI VÀO CHÍNH</div>
+            </div>
+            <div class="entrance-door right">CỬA PHẢI 🚪</div>
+        </div>
+    </main>
+
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal" style="display:none">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Chỉnh sửa ghế</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Mã ghế</label>
+                    <input type="text" id="editSeatCode" readonly class="input-readonly">
+                </div>
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" id="editName" placeholder="Nhập họ tên">
+                </div>
+                <div class="form-group">
+                    <label>Cấp bậc</label>
+                    <input type="text" id="editRank" placeholder="VD: Đại tá, Thượng tá...">
+                </div>
+                <div class="form-group">
+                    <label>Chức vụ</label>
+                    <input type="text" id="editPosition" placeholder="VD: Cục trưởng, Trưởng phòng...">
+                </div>
+                <div class="form-group">
+                    <label>Đơn vị</label>
+                    <input type="text" id="editUnit" placeholder="VD: C07, Phòng 1...">
+                </div>
+                <div class="form-group">
+                    <label>Nhóm</label>
+                    <select id="editGroup">
+                        <option value="guest-1">I. Lãnh đạo Bộ</option>
+                        <option value="guest-2">II. Nguyên lãnh đạo Bộ</option>
+                        <option value="guest-3">III. Lãnh đạo Tổng Cục/Cục (nghỉ hưu)</option>
+                        <option value="guest-4">IV. Lãnh đạo Phòng C07 (nghỉ hưu)</option>
+                        <option value="guest-5">V. Nguyên lãnh đạo C07</option>
+                        <option value="guest-6">VI. KH376</option>
+                        <option value="guest-7">VII. Đơn vị trực thuộc Bộ</option>
+                        <option value="guest-8">VIII. Công an địa phương</option>
+                        <option value="guest-9">IX-XI. Khác</option>
+                        <option value="c07">Lãnh đạo C07</option>
+                        <option value="cbcs">CBCS C07</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="clearSeat()">Xóa ghế</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+                <button class="btn btn-primary" onclick="saveSeatEdit()">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swap instruction overlay -->
+    <div class="swap-overlay" id="swapOverlay" style="display:none">
+        <div class="swap-message">
+            <span class="swap-icon">🔄</span>
+            Chọn ghế để hoán đổi vị trí. Nhấn <strong>ESC</strong> để hủy.
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

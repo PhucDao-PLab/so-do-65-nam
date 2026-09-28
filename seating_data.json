@@ -1,0 +1,3303 @@
+{
+  "guests": [
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 1,
+      "name": "Lương Tam Quang",
+      "rank": "Đại tướng",
+      "position": "Bộ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 2,
+      "name": "Lê Quốc Hùng",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 3,
+      "name": "Lê Văn Tuyến",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 4,
+      "name": "Nguyễn Văn Long",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 5,
+      "name": "Phạm Thế Tùng",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 6,
+      "name": "Nguyễn Ngọc Lâm",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "I",
+      "section": "Các đồng chí lãnh đạo Bộ",
+      "priority": 1,
+      "order_in_section": 7,
+      "name": "Đặng Hồng Đức",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 1,
+      "name": "Nguyễn Duy Ngọc",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": "Ủy viên BCT, Trưởng ban TC TW"
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 2,
+      "name": "Võ Thái Hòa",
+      "rank": "",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 3,
+      "name": "Võ Viết Thanh",
+      "rank": "",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 4,
+      "name": "Nguyễn Khánh Toàn",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 5,
+      "name": "Lê Thế Tiệm",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 6,
+      "name": "Nguyễn Văn Hưởng",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 7,
+      "name": "Đặng Văn Hiếu",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 8,
+      "name": "Bùi Quang Bền",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 9,
+      "name": "Phạm Dũng",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 10,
+      "name": "Nguyễn Văn Sơn",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 11,
+      "name": "Lê Quý Vương",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 12,
+      "name": "Bùi Văn Nam",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": "Nguyên ủy viên TW Đảng, nguyên TT"
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 13,
+      "name": "Nguyễn Văn Thành",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "II",
+      "section": "Các đ/c nguyên lãnh đạo Bộ",
+      "priority": 2,
+      "order_in_section": 14,
+      "name": "Trần Quốc Tỏ",
+      "rank": "Thượng tướng",
+      "position": "Thứ trưởng",
+      "unit": "Nguyên ủy viên TW Đảng, nguyên phó Bí thư Đảng ủy CATW"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 1,
+      "name": "Trần Văn Thảo",
+      "rank": "Trung tướng",
+      "position": "Tổng cục trưởng",
+      "unit": "Tổng cục CS"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 2,
+      "name": "Lê Thành",
+      "rank": "Trung tướng",
+      "position": "Phó tổng cục trưởng",
+      "unit": "Tổng cục CS"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 3,
+      "name": "Đỗ Ngọc Cẩn",
+      "rank": "",
+      "position": "Phó tổng cục trưởng",
+      "unit": "Tổng cục XDLL"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 4,
+      "name": "Bùi Văn Ngần",
+      "rank": "Thiếu tướng",
+      "position": "Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 5,
+      "name": "Đỗ Văn Sơn",
+      "rank": "Thiếu tướng",
+      "position": "Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 6,
+      "name": "Đoàn Việt Mạnh",
+      "rank": "Thiếu tướng",
+      "position": "Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 7,
+      "name": "Nguyễn Tuấn Anh",
+      "rank": "Trung tướng",
+      "position": "Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 8,
+      "name": "Nguyễn Dương",
+      "rank": "Đại tá",
+      "position": "Phó Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 9,
+      "name": "Điền Khánh",
+      "rank": "Đại tá",
+      "position": "Phó cục trưởng",
+      "unit": "Phó cục trưởng"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 10,
+      "name": "Nguyễn Văn Tươi",
+      "rank": "Đại tá",
+      "position": "Phó Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 11,
+      "name": "Nguyễn Mạnh Hội",
+      "rank": "Đại tá",
+      "position": "Phó cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 12,
+      "name": "Nguyễn Thế Sang",
+      "rank": "",
+      "position": "Phó cục trưởng",
+      "unit": "C08"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 13,
+      "name": "Đỗ Minh Dũng",
+      "rank": "Thiếu tướng",
+      "position": "Phó Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "III",
+      "section": "Các đồng chí lãnh đạo cấp Tổng Cục, Cục đã nghỉ hưu",
+      "priority": 3,
+      "order_in_section": 14,
+      "name": "Trần Trung Thành",
+      "rank": "Đại tá",
+      "position": "Phó Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 1,
+      "name": "Nguyễn Khải",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 2,
+      "name": "Nguyễn Bá Chấn",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 3,
+      "name": "Đặng Đình Hợp",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 4,
+      "name": "Nguyễn Đức Dục",
+      "rank": "Thiếu tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 5,
+      "name": "Phạm Thế Cường",
+      "rank": "Đại tá",
+      "position": "Phó GĐ Trung tâm",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 6,
+      "name": "Phạm Văn Nho",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "CA Hà Nam"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 7,
+      "name": "Đào Viết Bân",
+      "rank": "Thiếu tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 8,
+      "name": "Nguyễn Văn Trình",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 9,
+      "name": "Bùi Đức Hậu",
+      "rank": "Đại tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 10,
+      "name": "Trần Viết Chỉnh",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 11,
+      "name": "Nguyễn Bá Trường",
+      "rank": "Đại tá",
+      "position": "Phụ trách phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 12,
+      "name": "Tạ Văn Phú",
+      "rank": "Đại tá",
+      "position": "Phó Giám đốc Trung tâm",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 13,
+      "name": "Vũ Xuân Hòa",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 14,
+      "name": "Trần Văn Đường",
+      "rank": "Đại tá",
+      "position": "Phó Giám đốc Trung tâm",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 15,
+      "name": "Nguyễn Hữu Hợp",
+      "rank": "Đại tá",
+      "position": "Phó Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 16,
+      "name": "Trần Xuân Tưởng",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 17,
+      "name": "Nguyễn Huy Dũng",
+      "rank": "Đại tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 18,
+      "name": "Lý Thị Khuê",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 19,
+      "name": "Nguyễn Việt Cường",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 20,
+      "name": "Nguyễn Tăng Minh",
+      "rank": "Đại tá",
+      "position": "Giám đốc Trung tâm",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 21,
+      "name": "Bùi Thị Nga",
+      "rank": "Thượng tá",
+      "position": "Phụ trách kế toán",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 22,
+      "name": "Thân Thế Lực",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 23,
+      "name": "Hồ Văn Ủy",
+      "rank": "Thượng tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 24,
+      "name": "Trần Đức Thịnh",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 25,
+      "name": "Phạm Văn Cường",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 26,
+      "name": "Đỗ Công Sảo",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 27,
+      "name": "Trịnh Bá Hòa",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 28,
+      "name": "Lê Thị Sen",
+      "rank": "",
+      "position": "Công nhân viên công an",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 29,
+      "name": "Nguyễn Thế Hùng",
+      "rank": "Thượng tá",
+      "position": "Phó Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 30,
+      "name": "Nguyễn Thiều Quang",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 31,
+      "name": "Nguyễn Văn Thúy",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 32,
+      "name": "Đặng Trần Vinh",
+      "rank": "Đại tá",
+      "position": "Trưởng phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 33,
+      "name": "Trần Trung Thành",
+      "rank": "Đại tá",
+      "position": "Phó Cục trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 34,
+      "name": "Trần Hữu Nam",
+      "rank": "Đại tá",
+      "position": "Chánh Thanh tra",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 35,
+      "name": "Đỗ Thanh Hải",
+      "rank": "Đại tá",
+      "position": "Trưởng Phòng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 36,
+      "name": "Phạm Văn Quang",
+      "rank": "Thượng tá",
+      "position": "Phó Viện trưởng",
+      "unit": "C07"
+    },
+    {
+      "type": "guest",
+      "section_num": "IV",
+      "section": "Các đồng chí lãnh đạo cấp Phòng thuộc C07 đã nghỉ hưu",
+      "priority": 4,
+      "order_in_section": 37,
+      "name": "Nguyễn Huy Liệu",
+      "rank": "Đại tá",
+      "position": "Phó trưởng phòng",
+      "unit": "PC07 C.a tỉnh Long An"
+    },
+    {
+      "type": "guest",
+      "section_num": "V",
+      "section": "Các đồng chí lãnh đạo cấp Cục, cấp phòng hiện đang công tác các Công an các đơn vị, địa phương (nguyên là lãnh đạo C07)",
+      "priority": 5,
+      "order_in_section": 1,
+      "name": "Bùi Quang Việt",
+      "rank": "Đại tá",
+      "position": "Phó Cục trưởng",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "V",
+      "section": "Các đồng chí lãnh đạo cấp Cục, cấp phòng hiện đang công tác các Công an các đơn vị, địa phương (nguyên là lãnh đạo C07)",
+      "priority": 5,
+      "order_in_section": 2,
+      "name": "Nguyễn Minh Khương",
+      "rank": "Đại tá",
+      "position": "Phó Cục trưởng",
+      "unit": "V04"
+    },
+    {
+      "type": "guest",
+      "section_num": "V",
+      "section": "Các đồng chí lãnh đạo cấp Cục, cấp phòng hiện đang công tác các Công an các đơn vị, địa phương (nguyên là lãnh đạo C07)",
+      "priority": 5,
+      "order_in_section": 3,
+      "name": "Lê Ngọc Hải",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng Phòng 8",
+      "unit": "X05"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 1,
+      "name": "Trương Vũ Minh",
+      "rank": "Trung tá",
+      "position": "Trưởng phòng",
+      "unit": "Công an tỉnh Ninh Bình"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 2,
+      "name": "Lê Đức Thuận",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Ninh Bình"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 3,
+      "name": "Lê Xuân Hoàng",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh An Giang"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 4,
+      "name": "Nguyễn Minh Tiến",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Bắc Ninh"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 5,
+      "name": "Lê Công Hưng",
+      "rank": "Trung tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Ninh Bình"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 6,
+      "name": "Hoàng Thọ Đức",
+      "rank": "Trung tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Thái Nguyên"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 7,
+      "name": "Đỗ Tuấn Anh",
+      "rank": "Trung tá",
+      "position": "Phó trưởng Công an xã",
+      "unit": "Công an Tp Hà Nội"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 8,
+      "name": "Vũ Hồng Linh",
+      "rank": "Trung tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an Tp Hà Nội"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 9,
+      "name": "Đào Văn Bách",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Hưng Yên"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 10,
+      "name": "Vũ Bắc Cường",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Quảng Ninh"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 11,
+      "name": "Phạm Thanh Phong",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Ninh Bình"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 12,
+      "name": "Nguyễn Đức Thiện",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an Tp Hải Phòng"
+    },
+    {
+      "type": "guest",
+      "section_num": "VI",
+      "section": "Các đồng chí lãnh đạo cấp Phòng đi công tác thực tiễn tại đơn vị địa phương theo KH số 376/KH-BCA-X01",
+      "priority": 6,
+      "order_in_section": 13,
+      "name": "Nguyễn Long Hưng",
+      "rank": "Thượng tá",
+      "position": "Phó trưởng phòng",
+      "unit": "Công an tỉnh Phú Thọ"
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 1,
+      "name": "V01",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 2,
+      "name": "V02",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 3,
+      "name": "V03",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 4,
+      "name": "V04",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 5,
+      "name": "V05",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 6,
+      "name": "V06",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 7,
+      "name": "T06",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 8,
+      "name": "X01",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 9,
+      "name": "X02",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 10,
+      "name": "X03",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 11,
+      "name": "X04",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 12,
+      "name": "X05",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 13,
+      "name": "X06",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 14,
+      "name": "K02",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 15,
+      "name": "Thư ký lãnh đạo Bộ (TK7)",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 16,
+      "name": "Công an TP Hà Nội",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 17,
+      "name": "H01",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 18,
+      "name": "H02",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 19,
+      "name": "H03",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 20,
+      "name": "H04",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 21,
+      "name": "H05",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 22,
+      "name": "H06",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 23,
+      "name": "H07",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 24,
+      "name": "H08",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 25,
+      "name": "D01",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 26,
+      "name": "D02",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 27,
+      "name": "Đại diện lãnh đạo, cán bộ theo dõi chuyên đề Phòng 3, V01",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 28,
+      "name": "C06",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 29,
+      "name": "C08",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 30,
+      "name": "C09",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 31,
+      "name": "C10",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 32,
+      "name": "C11",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VII",
+      "section": "Đại diện lãnh đạo các đơn vị trực thuộc Bộ",
+      "priority": 7,
+      "order_in_section": 33,
+      "name": "C12",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 1,
+      "name": "Hà Nội",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 2,
+      "name": "Tp Hồ Chí Minh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 3,
+      "name": "Hải Phòng",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 4,
+      "name": "Đà Nẵng",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 5,
+      "name": "Cần Thơ",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 6,
+      "name": "Huế",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 7,
+      "name": "An Giang",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 8,
+      "name": "Bắc Ninh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 9,
+      "name": "Cà Mau",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 10,
+      "name": "Cao Bằng",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 11,
+      "name": "Đăk Lăk",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 12,
+      "name": "Điện Biên",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 13,
+      "name": "Đồng Nai",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 14,
+      "name": "Đồng Tháp",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 15,
+      "name": "Gia Lai",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 16,
+      "name": "Hưng Yên",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 17,
+      "name": "Hà Tĩnh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 18,
+      "name": "Khánh Hòa",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 19,
+      "name": "Lâm Đồng",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 20,
+      "name": "Lào Cai",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 21,
+      "name": "Lạng Sơn",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 22,
+      "name": "Lai Châu",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 23,
+      "name": "Nghệ An",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 24,
+      "name": "Ninh Bình",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 25,
+      "name": "Phú Thọ",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 26,
+      "name": "Quảng Ngãi",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 27,
+      "name": "Quảng Ninh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 28,
+      "name": "Quảng Trị",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 29,
+      "name": "Sơn La",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 30,
+      "name": "Tây Ninh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 31,
+      "name": "Thái Nguyên",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 32,
+      "name": "Thanh Hóa",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 33,
+      "name": "Tuyên Quang",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 34,
+      "name": "Vĩnh Long",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "VIII",
+      "section": "Đại diện Công an các địa phương",
+      "priority": 8,
+      "order_in_section": 35,
+      "name": "Thượng tá Nguyễn Chí Thành, PTP PC07 Hồ Chí Minh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "XI",
+      "section": "Các đơn vị báo chí",
+      "priority": 11,
+      "order_in_section": 1,
+      "name": "Cổng thông tin điện tử Bộ \nCông an",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "XI",
+      "section": "Các đơn vị báo chí",
+      "priority": 11,
+      "order_in_section": 2,
+      "name": "Báo Công an nhân dân",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "XI",
+      "section": "Các đơn vị báo chí",
+      "priority": 11,
+      "order_in_section": 3,
+      "name": "Truyền hình ANTV",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "XI",
+      "section": "Các đơn vị báo chí",
+      "priority": 11,
+      "order_in_section": 4,
+      "name": "Truyền hình Hà Nội",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "XI",
+      "section": "Các đơn vị báo chí",
+      "priority": 11,
+      "order_in_section": 5,
+      "name": "Cơ quan báo và phát thanh",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    },
+    {
+      "type": "guest",
+      "section_num": "XI",
+      "section": "Các đơn vị báo chí",
+      "priority": 11,
+      "order_in_section": 6,
+      "name": "VTV",
+      "rank": "",
+      "position": "",
+      "unit": ""
+    }
+  ],
+  "cbcs": [
+    {
+      "type": "cbcs",
+      "name": "Dương Đức Hải",
+      "rank": "Thiếu tướng",
+      "position": "Cục trưởng",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 1
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đình Hoàn",
+      "rank": "Thiếu tướng",
+      "position": "PCT",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 1
+    },
+    {
+      "type": "cbcs",
+      "name": "Huỳnh Thới An",
+      "rank": "Thiếu tướng",
+      "position": "PCT",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 1
+    },
+    {
+      "type": "cbcs",
+      "name": "Hoàng Ngọc Huynh",
+      "rank": "Đại tá",
+      "position": "PCT",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thanh Điệp",
+      "rank": "Đại tá",
+      "position": "PCT",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Hùng Dương",
+      "rank": "Đại tá",
+      "position": "PCT",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Xuân Trung",
+      "rank": "Thượng tá",
+      "position": "PCT",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Tuấn Anh",
+      "rank": "Trung tướng",
+      "position": "Nguyên Cục trưởng",
+      "dept": "C07",
+      "dept_priority": 1,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Bình",
+      "rank": "Đại tá",
+      "position": "TP",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Hoàng Đình Lợi",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Trung Nam",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Trương Mạnh Cường",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Hải Nam",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Lan Hương",
+      "rank": "Trung tá",
+      "position": "PTP",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Đào Tiến Dũng",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thái Hà",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Lương Anh Thái",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Thân Thị Huyền Trang",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Tiến Kha",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Ngô Thị Thanh Hoa",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Thị Thanh Hương",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Thị Thu Trang",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thu Giang",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Thị Thu Hiền",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Hoàng Thị Thu Hà",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Dang",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Ngọc Sơn",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Thị Quỳnh Vân",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Duy",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Tuấn Anh",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Công Thực",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Phùng Xuân Thái",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Anh Tú",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Quang Dũng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thanh Phương",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Thanh Văn",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Thiên Hương",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Ngô Thị Mỹ Hạnh",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Thị Hằng",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Nhật Anh",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lâm Văn Chính",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Tiến Tâm",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Quang Huy",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Hoài Anh",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Đình Hoàng",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Trường Quang",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Huy Tùng",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đỗ Thành Duy",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Hoàng Tú",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Ngọc Ánh",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Ngô Minh Tuân",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Kim Phượng",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Văn Đức Tuyến",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Đỗ Hoàng Nam",
+      "rank": "Thượng úy CMKT",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Tuấn Quỳnh",
+      "rank": "Thượng úy CMKT",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Đặng Sơn Hà",
+      "rank": "Trung úy CMKT",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Văn Kết",
+      "rank": "Trung úy CMKT",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Trịnh Đăng Phong",
+      "rank": "Trung úy CMKT",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Mai Văn Hợp",
+      "rank": "Trung úy CMKT",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Thị Nam Hiền",
+      "rank": "",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Tuyết Phương",
+      "rank": "",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Thị Hằng",
+      "rank": "",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Hà Văn Tuyến",
+      "rank": "",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Hằng",
+      "rank": "",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Thanh Thủy",
+      "rank": "",
+      "position": "",
+      "dept": "Phòng 1",
+      "dept_priority": 2,
+      "rank_priority": 99
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đức Định",
+      "rank": "Thượng tá",
+      "position": "Chánh TT",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Dũng",
+      "rank": "Thượng tá",
+      "position": "Phó CTT",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Khắc Đoán",
+      "rank": "Thượng tá",
+      "position": "Phó CTT",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Thị Thu Huyền",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Việt Anh",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đức Hòa",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Hùng",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Hoàng Văn Thế",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Hữu Phước",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Thị Hiền",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thanh Tùng",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 2",
+      "dept_priority": 3,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đình Đạc",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Đào Dương Quang",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Công Thành",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thanh Phúc",
+      "rank": "Thượng tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Minh Hải",
+      "rank": "Thượng tá",
+      "position": "TP",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Hoàng Thành",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Trọng Thanh",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Đỗ Thanh Tùng",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Danh Luân",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Ngọc Chung",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Phan Tuấn Anh",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Tất Đạt",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Hà Sơn",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Ngọc Sơn",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Thu Hiền",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Ngọc Tú",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Ngọc Tân",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Minh Hiếu",
+      "rank": "Trung úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Đào Văn Phúc",
+      "rank": "Trung úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Chu Quang Huy",
+      "rank": "Trung úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Tiến Lực",
+      "rank": "Trung úy",
+      "position": "",
+      "dept": "Phòng 3",
+      "dept_priority": 4,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Tiến Minh",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Tự Lập",
+      "rank": "Trung tá",
+      "position": "TP",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Đình Chiến",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Đặng Minh Tuấn",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Đồng Văn Nam",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Hoàng Văn Hà",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Trường Giang",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Trung Hiếu",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Hải",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Tuấn Hùng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Mai Văn Hải",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Hoàng Thị Ngọc",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Nam Anh",
+      "rank": "Trung úy",
+      "position": "",
+      "dept": "Phòng 4",
+      "dept_priority": 5,
+      "rank_priority": 8
+    },
+    {
+      "type": "cbcs",
+      "name": "Phan Mạnh Hà",
+      "rank": "Đại tá",
+      "position": "TP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Văn Quỳnh",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Từ Quang Đức",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Văn Điềm",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Tô Văn Minh",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Công Hoà",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Đào Duy Thương",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Mạnh Khang",
+      "rank": "Thượng tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Tâm Anh",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Hồng Thắng",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Tuyến",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Bá Tuấn",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Lại Tuấn Anh",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Thái Hưng",
+      "rank": "Trung tá",
+      "position": "Nguyên cán bộ",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Công Trình",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thanh Tùng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Hà Sơn",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Ngọc Nam",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Khánh Duy",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Phòng 5",
+      "dept_priority": 6,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Mùa",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Đào Mạnh Hà",
+      "rank": "Thượng tá",
+      "position": "PTP",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Đoàn Văn Giáp",
+      "rank": "Trung tá",
+      "position": "TP",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Thu Hằng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thanh Hà",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Phúc Hưng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Hoàng Thảo",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lưu Thị Trang",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Văn Tuyển",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Phòng 6",
+      "dept_priority": 7,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Sơn Lâm",
+      "rank": "Đại tá",
+      "position": "GĐTT",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Chí Dũng",
+      "rank": "Thượng tá",
+      "position": "PGĐTT",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Đăng Khoa",
+      "rank": "Thượng tá",
+      "position": "PGĐTT",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Hữu Cường",
+      "rank": "Thượng tá",
+      "position": "PGĐTT",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Thị Thắng",
+      "rank": "Thượng tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 3
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Đại Dương",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Hồng Sơn",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Vũ Duy Hưng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Dương Minh Thanh",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Hồ Đức Anh",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Huy Toàn",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Quang Thành",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Huy Khánh",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Kim Anh Tuấn",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Nguyên Nghị",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Bùi Hải Anh",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Đỗ Quang Nam",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Ngô Trí Thức",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Doãn Hiếu",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Trung tâm",
+      "dept_priority": 8,
+      "rank_priority": 7
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đức Thắng",
+      "rank": "Đại tá",
+      "position": "Viện trưởng",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 2
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Đại Nghĩa",
+      "rank": "Trung tá",
+      "position": "PVT",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Thị Thu",
+      "rank": "Trung tá",
+      "position": "PVT",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Mai Đăng Hưng",
+      "rank": "Trung tá",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 4
+    },
+    {
+      "type": "cbcs",
+      "name": "Phạm Tất Mạnh",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Thị Hồng",
+      "rank": "Thiếu tá",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 5
+    },
+    {
+      "type": "cbcs",
+      "name": "Trần Trung Thành",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Hà Ngọc Tài",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Nguyễn Danh Tùng",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Lê Anh Tuấn",
+      "rank": "Đại úy",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 6
+    },
+    {
+      "type": "cbcs",
+      "name": "Đỗ Thị Phương Thảo",
+      "rank": "Thượng úy",
+      "position": "",
+      "dept": "Viện Nghiên cứu",
+      "dept_priority": 9,
+      "rank_priority": 7
+    }
+  ],
+  "total_guests": 162,
+  "total_cbcs": 168,
+  "total": 330
+}
