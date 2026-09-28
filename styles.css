@@ -66,7 +66,6 @@ body {
     background: var(--bg-dark);
     color: var(--text-primary);
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 /* ========== Header ========== */
@@ -435,6 +434,8 @@ body {
     align-items: center;
     transition: transform var(--transition-normal);
     transform-origin: top center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* ========== Stage ========== */
@@ -546,6 +547,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: var(--row-gap);
+    min-width: calc(var(--seat-width) * 20 + var(--seat-gap) * 19 + var(--aisle-width) + 60px);
 }
 
 /* Row */
