@@ -84,8 +84,8 @@
       "priority": 2,
       "order_in_section": 1,
       "name": "Nguyễn Duy Ngọc",
-      "rank": "Thượng tướng",
-      "position": "Thứ trưởng",
+      "rank": "Ủy viên BCT",
+      "position": "Trưởng ban TC TW",
       "unit": "Ủy viên BCT, Trưởng ban TC TW"
     },
     {
@@ -800,7 +800,7 @@
       "order_in_section": 1,
       "name": "Bùi Quang Việt",
       "rank": "Đại tá",
-      "position": "Phó Cục trưởng",
+      "position": "Phó Cục trưởng V05",
       "unit": ""
     },
     {
@@ -811,7 +811,7 @@
       "order_in_section": 2,
       "name": "Nguyễn Minh Khương",
       "rank": "Đại tá",
-      "position": "Phó Cục trưởng",
+      "position": "Phó Cục trưởng V04",
       "unit": "V04"
     },
     {
@@ -1797,7 +1797,7 @@
       "type": "cbcs",
       "name": "Nguyễn Đình Hoàn",
       "rank": "Thiếu tướng",
-      "position": "PCT",
+      "position": "Phó Cục trưởng",
       "dept": "C07",
       "dept_priority": 1,
       "rank_priority": 1
@@ -1806,7 +1806,7 @@
       "type": "cbcs",
       "name": "Huỳnh Thới An",
       "rank": "Thiếu tướng",
-      "position": "PCT",
+      "position": "Phó Cục trưởng",
       "dept": "C07",
       "dept_priority": 1,
       "rank_priority": 1
@@ -1815,7 +1815,7 @@
       "type": "cbcs",
       "name": "Hoàng Ngọc Huynh",
       "rank": "Đại tá",
-      "position": "PCT",
+      "position": "Phó Cục trưởng",
       "dept": "C07",
       "dept_priority": 1,
       "rank_priority": 2
@@ -1824,7 +1824,7 @@
       "type": "cbcs",
       "name": "Nguyễn Thanh Điệp",
       "rank": "Đại tá",
-      "position": "PCT",
+      "position": "Phó Cục trưởng",
       "dept": "C07",
       "dept_priority": 1,
       "rank_priority": 2
@@ -1833,7 +1833,7 @@
       "type": "cbcs",
       "name": "Phạm Hùng Dương",
       "rank": "Đại tá",
-      "position": "PCT",
+      "position": "Phó Cục trưởng",
       "dept": "C07",
       "dept_priority": 1,
       "rank_priority": 2
@@ -1842,7 +1842,7 @@
       "type": "cbcs",
       "name": "Nguyễn Xuân Trung",
       "rank": "Thượng tá",
-      "position": "PCT",
+      "position": "Phó Cục trưởng",
       "dept": "C07",
       "dept_priority": 1,
       "rank_priority": 3

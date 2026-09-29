@@ -40,11 +40,30 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadData() {
     try {
+        // Try fetch first (works with http/https)
         const resp = await fetch('seating_data.json');
         seatingData = await resp.json();
     } catch (e) {
-        console.error('Failed to load seating data:', e);
-        showToast('Không thể tải dữ liệu!', 'error');
+        console.warn('fetch failed, trying XMLHttpRequest fallback:', e.message);
+        try {
+            // Fallback for file:// protocol
+            seatingData = await new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'seating_data.json', true);
+                xhr.onload = () => {
+                    if (xhr.status === 200 || xhr.status === 0) {
+                        resolve(JSON.parse(xhr.responseText));
+                    } else {
+                        reject(new Error('XHR status: ' + xhr.status));
+                    }
+                };
+                xhr.onerror = () => reject(new Error('XHR failed'));
+                xhr.send();
+            });
+        } catch (e2) {
+            console.error('All loading methods failed:', e2);
+            showToast('Không thể tải dữ liệu! Hãy mở qua http://localhost:8080', 'error');
+        }
     }
 }
 
@@ -132,7 +151,7 @@ function populateSeats() {
     seatMap = {};
 
     // Try to load saved arrangement from localStorage
-    const saved = localStorage.getItem('seatingArrangement_65_v2');
+    const saved = localStorage.getItem('seatingArrangement_65_v6');
     if (saved) {
         try {
             seatMap = JSON.parse(saved);
@@ -294,11 +313,6 @@ function generateDefaultArrangement() {
     const guestNames = new Set(guests.map(g => g.name));
     const assigned = new Set();
 
-    function isCucLevelOrAbove(position) {
-        if (!position) return false;
-        return /bộ trưởng|thứ trưởng|tổng cục|cục trưởng|phó cục|cục phó|^PCT$/i.test(position.trim());
-    }
-
     function isTongCucLevel(person) {
         return /tổng cục/i.test(person.position || '') || /tổng cục/i.test(person.unit || '');
     }
@@ -310,8 +324,8 @@ function generateDefaultArrangement() {
     for (let i = 0; i < SEATS_PER_SIDE; i++) rightSeatsOrder.push(SEATS_PER_SIDE + 1 + i);
 
     // ============================================================
-    // ROW 1: LEFT = Cục trưởng (seat 10) → Lãnh đạo Bộ (I) → phần tràn
-    //         RIGHT = Bộ trưởng (seat 11) → đ/c Ngọc (12) → LĐ Bộ còn lại
+    // ROW 1: LEFT = Cục trưởng (seat 10) → Nguyên LĐ Bộ (II)
+    //         RIGHT = Bộ trưởng (seat 11) → đ/c Ngọc (12) → LĐ Bộ (I) → Nguyên LĐ Bộ
     // ============================================================
 
     // Cục trưởng → seat R1-10 (innermost left)
@@ -342,7 +356,6 @@ function generateDefaultArrangement() {
         g.section_num === 'II' && g.name === 'Nguyễn Duy Ngọc'
     );
     if (dcNgoc) {
-        // Ngọc giữ nguyên position (không thêm "Nguyên" vì đặc biệt)
         assignSeat('R1-12', {
             ...dcNgoc, _css: 'section-2', _group: `guest-${dcNgoc.priority}`
         });
@@ -359,7 +372,7 @@ function generateDefaultArrangement() {
     const leftLDBo = allLDBo.slice(0, leftLDBoCount);
     const rightLDBo = allLDBo.slice(leftLDBoCount);
 
-    // Fill Row 1 LEFT: seats 9,8,7,... with Lãnh đạo Bộ first
+    // Fill Row 1 LEFT: seats 9,8,7,... with Lãnh đạo Bộ first (inner seats)
     let r1LeftIdx = 0;
     for (let i = 1; i < leftSeatsOrder.length; i++) {
         if (r1LeftIdx >= leftLDBo.length) break;
@@ -370,7 +383,7 @@ function generateDefaultArrangement() {
         r1LeftIdx++;
     }
 
-    // Fill remaining Row 1 LEFT with nguyên LĐ Bộ
+    // Fill remaining Row 1 LEFT with nguyên LĐ Bộ (outer seats)
     const nguyenLDBo = sortByPriority(
         guests.filter(g => g.section_num === 'II' && !assigned.has(g.name))
     ).map(p => ({
@@ -395,13 +408,12 @@ function generateDefaultArrangement() {
         if (r1RightIdx >= rightLDBo.length) break;
         const sn = rightSeatsOrder[i];
         const code = `R1-${String(sn).padStart(2, '0')}`;
-        if (seatMap[code]) continue;
         assignSeat(code, rightLDBo[r1RightIdx]);
         assigned.add(rightLDBo[r1RightIdx].name);
         r1RightIdx++;
     }
 
-    // Fill remaining Row 1 RIGHT with nguyên LĐ Bộ (to avoid empty gaps)
+    // Fill remaining Row 1 RIGHT with nguyên LĐ Bộ overflow
     const nguyenLDBoForR1Right = sortByPriority(
         guests.filter(g => g.section_num === 'II' && !assigned.has(g.name))
     ).map(p => ({
@@ -420,7 +432,7 @@ function generateDefaultArrangement() {
     }
 
     // ============================================================
-    // ROW 2 LEFT: Cục phó C07 đương nhiệm → Nguyên LĐC (Tổng cục trước → Cục)
+    // ROW 2 LEFT: PCT C07 đương nhiệm → Nguyên LĐC (Tổng cục trước → Cục)
     // ============================================================
 
     // C07 Phó cục trưởng đương nhiệm
@@ -445,7 +457,17 @@ function generateDefaultArrangement() {
         _css: 'section-3', _group: `guest-${p.priority}`
     }));
 
-    const row2Left = [...pctDuongNhiem, ...nguyenLDTongCuc, ...nguyenLDCuc];
+    // Row 2 LEFT order: Nguyên LĐC (inner/aisle) → PCT C07 (outer/wall)
+    // Calculate how many nguyên seats fit on Row 2 LEFT
+    const nguyenSlotsR2 = SEATS_PER_SIDE - pctDuongNhiem.length;
+    // Prefer guest-only nguyên (not also in cbcs) for Row 2, so Nguyễn Tuấn Anh goes to Row 3
+    const cbcsNames = new Set(cbcs.map(c => c.name));
+    const nguyenLDCucGuestOnly = nguyenLDCuc.filter(p => !cbcsNames.has(p.name));
+    const nguyenLDCucCbcsAlso = nguyenLDCuc.filter(p => cbcsNames.has(p.name));
+    const allNguyenForR2 = [...nguyenLDTongCuc, ...nguyenLDCucGuestOnly, ...nguyenLDCucCbcsAlso];
+    const nguyenForRow2 = allNguyenForR2.slice(0, nguyenSlotsR2);
+
+    const row2Left = [...nguyenForRow2, ...pctDuongNhiem];
 
     let r2l = 0;
     for (const sn of leftSeatsOrder) {
@@ -473,15 +495,12 @@ function generateDefaultArrangement() {
     }));
 
     // Đ/c đã từng công tác tại C07 (Section V):
-    // Khương & Việt không có chữ "Nguyên", Lê Ngọc Hải thuộc bên trái
-    const noNguyenNames = ['Nguyễn Minh Khương', 'Bùi Quang Việt'];
+    // Khương & Việt giữ nguyên chức vụ (Phó Cục trưởng), Lê Ngọc Hải → bên trái
     sortByPriority(
         guests.filter(g => g.section_num === 'V' && !assigned.has(g.name) && g.name !== 'Lê Ngọc Hải')
     ).forEach(p => {
-        const pos = noNguyenNames.includes(p.name) ? (p.position || '') : addNguyenPrefix(p.position);
         row2RightPool.push({
-            ...p, position: pos,
-            _css: 'section-5', _group: `guest-${p.priority}`
+            ...p, _css: 'section-5', _group: `guest-${p.priority}`
         });
     });
 
@@ -496,11 +515,12 @@ function generateDefaultArrangement() {
     }
 
     // ============================================================
-    // Build LEFT and RIGHT pools first (for rows 2 remaining + 3+)
-    // Fill compactly, no gaps
+    // Build LEFT and RIGHT pools (for rows 3+)
+    // LEFT: Nguyên LĐC → Hưu trí C07 → Lãnh đạo Phòng 376 → Lê Ngọc Hải →
+    //        Trưởng phòng C07 (8) → Phó phòng C07 → Trống (CBCS C07)
+    // RIGHT: Thư ký → Cục thuộc Bộ → Hiệp hội/UBND/CA phường →
+    //         PC07 → Lãnh đạo Phòng C07 → Báo chí → Trống
     // ============================================================
-    // LEFT: LĐ Cục + LĐ Phòng C07 hưu trí → LĐ Phòng đương nhiệm → diện 376 → Lê Ngọc Hải → CBCS C07
-    // RIGHT: Thư ký → khách mời cục nghiệp vụ → Hiệp hội PCCC + UBND phường + CA phường Đại Mỗ → PC07 → cơ quan khác + báo chí
 
     // --- LEFT POOL ---
     const leftPool = [];
@@ -521,50 +541,102 @@ function generateDefaultArrangement() {
         _css: 'section-4', _group: `guest-${p.priority}`
     }));
 
-    // 3) Lãnh đạo phòng đương nhiệm C07 (TP/PTP từ cbcs)
-    sortByPriority(cbcs.filter(o =>
-        o.dept !== 'C07' && isLeadershipPosition(o.position) &&
-        !assigned.has(o.name) && !guestNames.has(o.name)
-    )).forEach(p => leftPool.push({
+    // 3) Lê Ngọc Hải (from Section V) → renamed "Lãnh đạo Phòng 376"
+    const leNgocHai = guests.find(g => g.name === 'Lê Ngọc Hải' && !assigned.has(g.name));
+    if (leNgocHai) {
+        leftPool.push({
+            ...leNgocHai, name: 'Lãnh đạo Phòng 376', rank: '', position: '',
+            _css: 'section-6', _group: `guest-${leNgocHai.priority}`
+        });
+    }
+
+    // 4) Diện 376 (Section VI) → renamed "Lãnh đạo Phòng 376"
+    const section6Items = sortByPriority(
+        guests.filter(g => g.section_num === 'VI' && !assigned.has(g.name))
+    ).map(p => ({
+        ...p, name: 'Lãnh đạo Phòng 376', rank: '', position: '',
+        _css: 'section-6', _group: `guest-${p.priority}`
+    }));
+    leftPool.push(...section6Items);
+
+    // 5) Trưởng phòng C07 đương nhiệm (8 trưởng phòng)
+    const truongPhongList = sortByPriority(cbcs.filter(o =>
+        o.dept !== 'C07' && !assigned.has(o.name) && !guestNames.has(o.name) &&
+        (o.position === 'TP' || o.position === 'GĐTT' || o.position === 'Viện trưởng' ||
+         o.position === 'Chánh TT')
+    )).map(p => ({
+        ...p, name: 'Trưởng phòng C07', rank: '', position: '',
+        unit: p.dept, _css: 'cbcs', _group: 'cbcs'
+    }));
+
+    // 6) 1 × "Phó Trưởng phòng C07"
+    const phoPhongAll = sortByPriority(cbcs.filter(o =>
+        o.dept !== 'C07' && !assigned.has(o.name) && !guestNames.has(o.name) &&
+        (o.position === 'PTP' || o.position === 'PGĐTT' || o.position === 'PVT' ||
+         o.position === 'Phó CTT')
+    ));
+    let phoTPItem = null;
+    if (phoPhongAll.length > 0) {
+        phoTPItem = {
+            ...phoPhongAll[0], name: 'Phó Trưởng phòng C07', rank: '', position: '',
+            unit: phoPhongAll[0].dept, _css: 'cbcs', _group: 'cbcs'
+        };
+        assigned.add(phoPhongAll[0].name);
+    }
+
+    // 7) Remaining Phó trưởng phòng → "Lãnh đạo Phòng C07"
+    const phoPhongList = sortByPriority(cbcs.filter(o =>
+        o.dept !== 'C07' && !assigned.has(o.name) && !guestNames.has(o.name) &&
+        (o.position === 'PTP' || o.position === 'PGĐTT' || o.position === 'PVT' ||
+         o.position === 'Phó CTT')
+    )).map(p => ({
         ...p, name: 'Lãnh đạo Phòng C07', rank: '', position: '',
         unit: p.dept, _css: 'cbcs', _group: 'cbcs'
     }));
 
-    // 4) Diện 376 (Section VI) → renamed "Lãnh đạo Phòng 376"
-    sortByPriority(
-        guests.filter(g => g.section_num === 'VI' && !assigned.has(g.name))
-    ).forEach(p => leftPool.push({
-        ...p, name: 'Lãnh đạo Phòng 376', rank: '', position: '',
-        _css: 'section-6', _group: `guest-${p.priority}`
-    }));
+    // Reorder for Row 9: TP at inner seats (near aisle), Phó TP + remaining 376 at outer
+    // Row 3-8 = 6 rows × 10 seats = 60 items from start of leftPool
+    const row9StartIdx = 6 * SEATS_PER_SIDE; // = 60
+    const itemsBeforeTP = leftPool.length; // III + Hưu trí + 376 items
 
-    // 5) Lê Ngọc Hải (from Section V, nếu chưa xếp)
-    const leNgocHai = guests.find(g => g.name === 'Lê Ngọc Hải' && !assigned.has(g.name));
-    if (leNgocHai) {
-        leftPool.push({
-            ...leNgocHai,
-            _css: 'section-5', _group: `guest-${leNgocHai.priority}`
-        });
+    if (itemsBeforeTP > row9StartIdx) {
+        // Some 376 items spill into Row 9 — pull them out and re-add after TP
+        const spillCount = itemsBeforeTP - row9StartIdx;
+        const spillItems = leftPool.splice(leftPool.length - spillCount, spillCount);
+        // Row 9 order: TP (inner) → Phó TP → spill 376 (outer)
+        leftPool.push(...truongPhongList);
+        if (phoTPItem) leftPool.push(phoTPItem);
+        leftPool.push(...spillItems);
+    } else {
+        // No spill — just add TP then Phó TP
+        leftPool.push(...truongPhongList);
+        if (phoTPItem) leftPool.push(phoTPItem);
     }
+    leftPool.push(...phoPhongList);
 
-    // CBCS C07 không có ghế tại buổi lễ
-
-    // Calculate left capacity: remaining Row 2 LEFT empty + rows 3-11 LEFT (9 rows × 10 seats)
-    let leftCapacity = 0;
-    for (const sn of leftSeatsOrder) {
-        const code = `R2-${String(sn).padStart(2, '0')}`;
-        if (!seatMap[code]) leftCapacity++;
-    }
-    leftCapacity += (TOTAL_ROWS - 2) * SEATS_PER_SIDE; // rows 3-11
-
-    // Split: items that fit on left vs overflow to right
-    const leftFit = leftPool.slice(0, leftCapacity);
-    const leftOverflow = leftPool.slice(leftCapacity);
-
-    // --- RIGHT POOL ---
+    // --- RIGHT POOL (rows 3-10) ---
     const rightPool = [];
 
-    // 1) Thư ký lãnh đạo Bộ (TK7)
+    // Calculate remaining Row 2 RIGHT seats to fill
+    const row2RightRemaining = SEATS_PER_SIDE - row2RightPool.length;
+
+    // 1) Cục nghiệp vụ (Section VII, trừ thư ký) → renamed "Cục thuộc Bộ"
+    const cucThuocBoAll = sortByPriority(
+        guests.filter(g =>
+            g.section_num === 'VII' && !assigned.has(g.name) &&
+            !/thư ký/i.test(g.name)
+        )
+    ).map(p => ({
+        ...p, name: 'Cục thuộc Bộ', rank: '', position: '',
+        _css: 'section-7', _group: `guest-${p.priority}`
+    }));
+
+    // First batch fills remaining Row 2 RIGHT seats
+    const cucThuocBoR2 = cucThuocBoAll.slice(0, row2RightRemaining);
+    const cucThuocBoR3plus = cucThuocBoAll.slice(row2RightRemaining);
+    rightPool.push(...cucThuocBoR2);
+
+    // 2) Thư ký lãnh đạo Bộ (TK7) — goes to Row 3 RIGHT seat 11 (below Võ Thái Hòa)
     guests.filter(g =>
         g.section_num === 'VII' && !assigned.has(g.name) &&
         /thư ký/i.test(g.name)
@@ -572,7 +644,10 @@ function generateDefaultArrangement() {
         ...p, _css: 'section-7', _group: `guest-${p.priority}`
     }));
 
-    // 2) Hiệp hội PCCC, UBND phường Đại Mỗ, CA phường Đại Mỗ (ngay sau TK7)
+    // Remaining Cục thuộc Bộ continues after TK7
+    rightPool.push(...cucThuocBoR3plus);
+
+    // 3) Hiệp hội PCCC, UBND phường Đại Mỗ, CA phường Đại Mỗ
     const extraSeats = [
         { name: 'Hiệp hội PCCC', rank: '', position: '', unit: '', _css: 'section-9', _group: 'guest-9', section: '' },
         { name: 'UBND phường Đại Mỗ', rank: '', position: '', unit: '', _css: 'section-10', _group: 'guest-10', section: '' },
@@ -580,21 +655,7 @@ function generateDefaultArrangement() {
     ];
     extraSeats.forEach(p => rightPool.push(p));
 
-    // 3) Cục nghiệp vụ (Section VII, trừ thư ký) → renamed "Cục thuộc Bộ"
-    sortByPriority(
-        guests.filter(g =>
-            g.section_num === 'VII' && !assigned.has(g.name) &&
-            !/thư ký/i.test(g.name)
-        )
-    ).forEach(p => rightPool.push({
-        ...p, name: 'Cục thuộc Bộ', rank: '', position: '',
-        _css: 'section-7', _group: `guest-${p.priority}`
-    }));
-
-    // 4) Left overflow (dư bên trái → xếp sau cục nghiệp vụ, trước PC07)
-    leftOverflow.forEach(p => rightPool.push(p));
-
-    // 5) PC07 địa phương (Section VIII) → renamed "PC07"
+    // 4) PC07 địa phương (Section VIII) → renamed "PC07"
     sortByPriority(
         guests.filter(g => g.section_num === 'VIII' && !assigned.has(g.name))
     ).forEach(p => rightPool.push({
@@ -602,12 +663,28 @@ function generateDefaultArrangement() {
         _css: 'section-8', _group: `guest-${p.priority}`
     }));
 
-    // 6) Cơ quan khác + Báo chí (Section XI + IX + X) — dưới cùng bên phải
+    // 5) Lãnh đạo Phòng C07 - split between left and right for balance
+    // Left side fills rows 3-10 only; Row 11 LEFT = CBCS C07
+    let leftCapacity = 0;
+    for (const sn of leftSeatsOrder) {
+        const code = `R2-${String(sn).padStart(2, '0')}`;
+        if (!seatMap[code]) leftCapacity++;
+    }
+    leftCapacity += (TOTAL_ROWS - 3) * SEATS_PER_SIDE; // rows 3-10 only (8 rows)
+
+    const leftFit = leftPool.slice(0, leftCapacity);
+    const leftOverflow = leftPool.slice(leftCapacity);
+    // Overflow from left → right pool (LĐ Phòng C07 balance)
+    leftOverflow.forEach(p => rightPool.push(p));
+
+    // --- RIGHT POOL (Row 11 only) - Báo chí truyền thông ---
+    // These are separated and will be placed ONLY on Row 11 RIGHT
+    const mediaPool = [];
     sortByPriority(
         guests.filter(g =>
             ['IX', 'X', 'XI'].includes(g.section_num) && !assigned.has(g.name)
         )
-    ).forEach(p => rightPool.push({
+    ).forEach(p => mediaPool.push({
         ...p, _css: cssMap[p.section_num] || 'section-11', _group: `guest-${p.priority}`
     }));
 
@@ -640,8 +717,8 @@ function generateDefaultArrangement() {
         rightIdx++;
     }
 
-    // Fill rows 3+
-    for (let rowNum = 3; rowNum <= TOTAL_ROWS; rowNum++) {
+    // Fill rows 3-10 with left and right pools
+    for (let rowNum = 3; rowNum <= TOTAL_ROWS - 1; rowNum++) {
         for (const sn of leftSeatsOrder) {
             if (leftIdx >= leftFit.length) break;
             const code = `R${rowNum}-${String(sn).padStart(2, '0')}`;
@@ -658,6 +735,49 @@ function generateDefaultArrangement() {
             assignSeat(code, person);
             if (person.name) assigned.add(person.name);
             rightIdx++;
+        }
+    }
+
+    // ============================================================
+    // Row 11: LEFT = CBCS C07, RIGHT = Báo chí truyền thông + CBCS C07
+    // ============================================================
+
+    // Row 11 LEFT: all CBCS C07
+    for (const sn of leftSeatsOrder) {
+        const code = `R${TOTAL_ROWS}-${String(sn).padStart(2, '0')}`;
+        assignSeat(code, {
+            name: 'CBCS C07', rank: '', position: '', unit: 'C07',
+            _css: 'cbcs', _group: 'cbcs', section: ''
+        });
+    }
+
+    // Row 11 RIGHT: Báo chí truyền thông first, then CBCS C07
+    let mediaIdx = 0;
+    for (const sn of rightSeatsOrder) {
+        const code = `R${TOTAL_ROWS}-${String(sn).padStart(2, '0')}`;
+        if (mediaIdx < mediaPool.length) {
+            assignSeat(code, mediaPool[mediaIdx]);
+            mediaIdx++;
+        } else {
+            assignSeat(code, {
+                name: 'CBCS C07', rank: '', position: '', unit: 'C07',
+                _css: 'cbcs', _group: 'cbcs', section: ''
+            });
+        }
+    }
+
+    // ============================================================
+    // Fill ALL remaining empty seats with "CBCS C07"
+    // ============================================================
+    for (let rowNum = 1; rowNum <= TOTAL_ROWS; rowNum++) {
+        for (let s = 1; s <= SEATS_PER_ROW; s++) {
+            const code = `R${rowNum}-${String(s).padStart(2, '0')}`;
+            if (!seatMap[code]) {
+                assignSeat(code, {
+                    name: 'CBCS C07', rank: '', position: '', unit: 'C07',
+                    _css: 'cbcs', _group: 'cbcs', section: ''
+                });
+            }
         }
     }
 
@@ -990,7 +1110,7 @@ function undoChange() {
 }
 
 function saveChanges() {
-    localStorage.setItem('seatingArrangement_65_v2', JSON.stringify(seatMap));
+    localStorage.setItem('seatingArrangement_65_v3', JSON.stringify(seatMap));
     showToast('Đã lưu sơ đồ!', 'success');
 }
 
