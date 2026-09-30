@@ -536,6 +536,11 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Row 13: extra spacing from row 12 */
+.seat-row.extra-gap {
+    margin-top: 20px;
+}
+
 /* Guest zone (overflow rows without tables) */
 .guest-zone {
     margin-top: 8px;

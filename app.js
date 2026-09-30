@@ -1,7 +1,7 @@
 /**
  * Seating Chart App - 65th Anniversary PCCC & CNCH
- * Layout: 3 rows with tables (front) + 8 rows without tables (back)
- * Variable seats per row: R1=14, R2=16, R3=16, R4+=20
+ * Layout: 3 rows with tables (front) + 10 rows without tables (back)
+ * Variable seats per row: R1=14, R2=16, R3=16, R4-R12=20, R13=16
  * Only seats for: guests + C07 leadership + department heads (TP/PTP)
  */
 
@@ -12,15 +12,16 @@
 const SEATS_PER_SIDE = 10; // max seats per side (rows 4+)
 const SEATS_PER_ROW = SEATS_PER_SIDE * 2; // 20 (max)
 const TABLE_ROWS = 3;   // 3 dãy đầu có bàn
-const BACK_ROWS = 8;    // 8 dãy sau không bàn
-const TOTAL_ROWS = TABLE_ROWS + BACK_ROWS; // 11
+const BACK_ROWS = 10;   // 10 dãy sau không bàn
+const TOTAL_ROWS = TABLE_ROWS + BACK_ROWS; // 13
 
 // Variable seats per row: Row 1 = 7/side, Row 2 = 8/side, Row 3 = 8/side, Row 4+ = 10/side
 const ROW_SEATS_PER_SIDE = {
     1: 7,   // 14 seats
     2: 8,   // 16 seats
     3: 8,   // 16 seats
-    // rows 4-11: default to SEATS_PER_SIDE (10) = 20 seats
+    // rows 4-12: default to SEATS_PER_SIDE (10) = 20 seats
+    13: 8,  // 16 seats (8 per side, extra spacing from row 12)
 };
 
 function seatsPerSideForRow(rowNum) {
@@ -35,7 +36,7 @@ const TOTAL_SEATS = (() => {
     let total = 0;
     for (let r = 1; r <= TABLE_ROWS + BACK_ROWS; r++) total += seatsPerRow(r);
     return total;
-})(); // 14+16+16+8*20 = 206
+})(); // 14+16+16+9*20+16 = 242
 
 let seatingData = null;       // Raw data from JSON
 let seatMap = {};             // seatCode -> person data
@@ -107,7 +108,10 @@ function buildRows(containerId, numRows, startRowNum, hasTables) {
         const rowNum = startRowNum + r;
         const sps = seatsPerSideForRow(rowNum); // seats per side for this row
         const rowEl = document.createElement('div');
-        rowEl.className = `seat-row${hasTables ? ' has-table' : ''}`;
+        let classes = `seat-row${hasTables ? ' has-table' : ''}`;
+        // Row 13 has extra spacing from row 12
+        if (rowNum === 13) classes += ' extra-gap';
+        rowEl.className = classes;
         rowEl.dataset.seatsPerSide = sps;
 
         // Row label
@@ -174,7 +178,7 @@ function populateSeats() {
     seatMap = {};
 
     // Try to load saved arrangement from localStorage
-    const saved = localStorage.getItem('seatingArrangement_65_v7');
+    const saved = localStorage.getItem('seatingArrangement_65_v8');
     if (saved) {
         try {
             seatMap = JSON.parse(saved);
@@ -695,7 +699,7 @@ function generateDefaultArrangement() {
         if (!seatMap[code]) leftCapacity++;
     }
     // Add rows 3-10 left capacity (variable per row)
-    for (let rn = 3; rn <= TOTAL_ROWS - 1; rn++) {
+    for (let rn = 3; rn <= 10; rn++) {
         leftCapacity += seatsPerSideForRow(rn);
     }
 
@@ -743,7 +747,7 @@ function generateDefaultArrangement() {
     }
 
     // Fill rows 3-10 with left and right pools (variable seats per row)
-    for (let rowNum = 3; rowNum <= TOTAL_ROWS - 1; rowNum++) {
+    for (let rowNum = 3; rowNum <= 10; rowNum++) {
         for (const sn of leftSeatsOrderForRow(rowNum)) {
             if (leftIdx >= leftFit.length) break;
             const code = `R${rowNum}-${String(sn).padStart(2, '0')}`;
@@ -764,22 +768,42 @@ function generateDefaultArrangement() {
     }
 
     // ============================================================
-    // Row 11: LEFT = CBCS C07, RIGHT = Báo chí truyền thông + CBCS C07
+    // Rows 11-12: all CBCS C07 (20 seats each)
+    // ============================================================
+    for (let rowNum = 11; rowNum <= 12; rowNum++) {
+        for (const sn of leftSeatsOrderForRow(rowNum)) {
+            const code = `R${rowNum}-${String(sn).padStart(2, '0')}`;
+            assignSeat(code, {
+                name: 'CBCS C07', rank: '', position: '', unit: 'C07',
+                _css: 'cbcs', _group: 'cbcs', section: ''
+            });
+        }
+        for (const sn of rightSeatsOrderForRow(rowNum)) {
+            const code = `R${rowNum}-${String(sn).padStart(2, '0')}`;
+            assignSeat(code, {
+                name: 'CBCS C07', rank: '', position: '', unit: 'C07',
+                _css: 'cbcs', _group: 'cbcs', section: ''
+            });
+        }
+    }
+
+    // ============================================================
+    // Row 13 (16 seats: 8+8, extra spacing): LEFT = CBCS C07, RIGHT = Báo chí truyền thông + CBCS C07
     // ============================================================
 
-    // Row 11 LEFT: all CBCS C07
-    for (const sn of leftSeatsOrderForRow(TOTAL_ROWS)) {
-        const code = `R${TOTAL_ROWS}-${String(sn).padStart(2, '0')}`;
+    // Row 13 LEFT: all CBCS C07
+    for (const sn of leftSeatsOrderForRow(13)) {
+        const code = `R13-${String(sn).padStart(2, '0')}`;
         assignSeat(code, {
             name: 'CBCS C07', rank: '', position: '', unit: 'C07',
             _css: 'cbcs', _group: 'cbcs', section: ''
         });
     }
 
-    // Row 11 RIGHT: Báo chí truyền thông first, then CBCS C07
+    // Row 13 RIGHT: Báo chí truyền thông first, then CBCS C07
     let mediaIdx = 0;
-    for (const sn of rightSeatsOrderForRow(TOTAL_ROWS)) {
-        const code = `R${TOTAL_ROWS}-${String(sn).padStart(2, '0')}`;
+    for (const sn of rightSeatsOrderForRow(13)) {
+        const code = `R13-${String(sn).padStart(2, '0')}`;
         if (mediaIdx < mediaPool.length) {
             assignSeat(code, mediaPool[mediaIdx]);
             mediaIdx++;
@@ -1137,7 +1161,7 @@ function undoChange() {
 }
 
 function saveChanges() {
-    localStorage.setItem('seatingArrangement_65_v7', JSON.stringify(seatMap));
+    localStorage.setItem('seatingArrangement_65_v8', JSON.stringify(seatMap));
     showToast('Đã lưu sơ đồ!', 'success');
 }
 
