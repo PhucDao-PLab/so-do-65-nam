@@ -1,7 +1,7 @@
 /**
  * Seating Chart App - 65th Anniversary PCCC & CNCH
  * Layout: 3 rows with tables (front) + 8 rows without tables (back)
- * 10 seats per side, 20 per row, total 11 rows = 220 seats
+ * Variable seats per row: R1=14, R2=16, R3=16, R4+=20
  * Only seats for: guests + C07 leadership + department heads (TP/PTP)
  */
 
@@ -9,12 +9,33 @@
 // DATA & STATE
 // ============================================================
 
-const SEATS_PER_SIDE = 10;
-const SEATS_PER_ROW = SEATS_PER_SIDE * 2; // 20
+const SEATS_PER_SIDE = 10; // max seats per side (rows 4+)
+const SEATS_PER_ROW = SEATS_PER_SIDE * 2; // 20 (max)
 const TABLE_ROWS = 3;   // 3 dãy đầu có bàn
 const BACK_ROWS = 8;    // 8 dãy sau không bàn
 const TOTAL_ROWS = TABLE_ROWS + BACK_ROWS; // 11
-const TOTAL_SEATS = TOTAL_ROWS * SEATS_PER_ROW; // 220
+
+// Variable seats per row: Row 1 = 7/side, Row 2 = 8/side, Row 3 = 8/side, Row 4+ = 10/side
+const ROW_SEATS_PER_SIDE = {
+    1: 7,   // 14 seats
+    2: 8,   // 16 seats
+    3: 8,   // 16 seats
+    // rows 4-11: default to SEATS_PER_SIDE (10) = 20 seats
+};
+
+function seatsPerSideForRow(rowNum) {
+    return ROW_SEATS_PER_SIDE[rowNum] || SEATS_PER_SIDE;
+}
+
+function seatsPerRow(rowNum) {
+    return seatsPerSideForRow(rowNum) * 2;
+}
+
+const TOTAL_SEATS = (() => {
+    let total = 0;
+    for (let r = 1; r <= TABLE_ROWS + BACK_ROWS; r++) total += seatsPerRow(r);
+    return total;
+})(); // 14+16+16+8*20 = 206
 
 let seatingData = null;       // Raw data from JSON
 let seatMap = {};             // seatCode -> person data
@@ -84,8 +105,10 @@ function buildRows(containerId, numRows, startRowNum, hasTables) {
 
     for (let r = 0; r < numRows; r++) {
         const rowNum = startRowNum + r;
+        const sps = seatsPerSideForRow(rowNum); // seats per side for this row
         const rowEl = document.createElement('div');
         rowEl.className = `seat-row${hasTables ? ' has-table' : ''}`;
+        rowEl.dataset.seatsPerSide = sps;
 
         // Row label
         const label = document.createElement('div');
@@ -93,10 +116,10 @@ function buildRows(containerId, numRows, startRowNum, hasTables) {
         label.textContent = `${rowNum}`;
         rowEl.appendChild(label);
 
-        // Left block (seats 1-10)
+        // Left block: seats from sps down to 1 (sps is closest to aisle)
         const leftBlock = document.createElement('div');
         leftBlock.className = 'row-block';
-        for (let s = 1; s <= SEATS_PER_SIDE; s++) {
+        for (let s = 1; s <= sps; s++) {
             const code = `R${rowNum}-${String(s).padStart(2, '0')}`;
             const seat = createSeatElement(code);
             leftBlock.appendChild(seat);
@@ -108,10 +131,10 @@ function buildRows(containerId, numRows, startRowNum, hasTables) {
         aisle.className = 'row-aisle';
         rowEl.appendChild(aisle);
 
-        // Right block (seats 11-20)
+        // Right block: seats from sps+1 to sps*2
         const rightBlock = document.createElement('div');
         rightBlock.className = 'row-block';
-        for (let s = SEATS_PER_SIDE + 1; s <= SEATS_PER_ROW; s++) {
+        for (let s = sps + 1; s <= sps * 2; s++) {
             const code = `R${rowNum}-${String(s).padStart(2, '0')}`;
             const seat = createSeatElement(code);
             rightBlock.appendChild(seat);
@@ -151,7 +174,7 @@ function populateSeats() {
     seatMap = {};
 
     // Try to load saved arrangement from localStorage
-    const saved = localStorage.getItem('seatingArrangement_65_v6');
+    const saved = localStorage.getItem('seatingArrangement_65_v7');
     if (saved) {
         try {
             seatMap = JSON.parse(saved);
@@ -273,7 +296,7 @@ function computePriorityScore(person) {
 function generateDefaultArrangement() {
     seatMap = {};
 
-    const guests = seatingData.guests;
+    const guests = seatingData.guests.filter(g => g.name !== 'Nguyễn Minh Khương');
     const cbcs = seatingData.cbcs;
 
     const cssMap = {
@@ -317,46 +340,65 @@ function generateDefaultArrangement() {
         return /tổng cục/i.test(person.position || '') || /tổng cục/i.test(person.unit || '');
     }
 
-    // Helper: left seats (10,9,8,...,1) and right seats (11,12,...,20)
-    const leftSeatsOrder = [];
-    for (let i = 0; i < SEATS_PER_SIDE; i++) leftSeatsOrder.push(SEATS_PER_SIDE - i);
-    const rightSeatsOrder = [];
-    for (let i = 0; i < SEATS_PER_SIDE; i++) rightSeatsOrder.push(SEATS_PER_SIDE + 1 + i);
+    // Helper: generate left seats order (center-out) for a given row
+    function leftSeatsOrderForRow(rowNum) {
+        const sps = seatsPerSideForRow(rowNum);
+        const order = [];
+        for (let i = 0; i < sps; i++) order.push(sps - i); // sps, sps-1, ..., 1
+        return order;
+    }
+
+    // Helper: generate right seats order (center-out) for a given row
+    function rightSeatsOrderForRow(rowNum) {
+        const sps = seatsPerSideForRow(rowNum);
+        const order = [];
+        for (let i = 0; i < sps; i++) order.push(sps + 1 + i); // sps+1, sps+2, ..., sps*2
+        return order;
+    }
+
+    // Row 1 seat orders (7 per side)
+    const r1Left = leftSeatsOrderForRow(1);   // [7,6,5,4,3,2,1]
+    const r1Right = rightSeatsOrderForRow(1); // [8,9,10,11,12,13,14]
+
+    // Row 2 seat orders (8 per side)
+    const r2Left = leftSeatsOrderForRow(2);   // [8,7,6,5,4,3,2,1]
+    const r2Right = rightSeatsOrderForRow(2); // [9,10,11,12,13,14,15,16]
 
     // ============================================================
-    // ROW 1: LEFT = Cục trưởng (seat 10) → Nguyên LĐ Bộ (II)
-    //         RIGHT = Bộ trưởng (seat 11) → đ/c Ngọc (12) → LĐ Bộ (I) → Nguyên LĐ Bộ
+    // ROW 1 (14 seats: 7 left + 7 right)
+    // LEFT = Cục trưởng (seat 7) → Lãnh đạo Bộ → Nguyên LĐ Bộ
+    // RIGHT = Bộ trưởng (seat 8) → đ/c Ngọc (9) → LĐ Bộ → Nguyên LĐ Bộ
     // ============================================================
 
-    // Cục trưởng → seat R1-10 (innermost left)
+    // Cục trưởng → innermost left (seat 7)
     const cucTruong = cbcs.find(o =>
         o.dept === 'C07' && /^cục trưởng$/i.test((o.position || '').trim())
     );
     if (cucTruong) {
-        assignSeat('R1-10', {
+        assignSeat(`R1-${String(r1Left[0]).padStart(2, '0')}`, {
             ...cucTruong, unit: cucTruong.dept, section: 'Lãnh đạo C07',
             _css: 'c07', _group: 'c07'
         });
         assigned.add(cucTruong.name);
     }
 
-    // Bộ trưởng → seat R1-11 (innermost right)
+    // Bộ trưởng → innermost right (seat 8)
     const boTruong = guests.find(g =>
         g.section_num === 'I' && /bộ trưởng/i.test(g.position || '')
     );
     if (boTruong) {
-        assignSeat('R1-11', {
+        assignSeat(`R1-${String(r1Right[0]).padStart(2, '0')}`, {
             ...boTruong, _css: 'section-1', _group: `guest-${boTruong.priority}`
         });
         assigned.add(boTruong.name);
     }
 
-    // đ/c Nguyễn Duy Ngọc → seat R1-12 (next right after Bộ trưởng)
+    // đ/c Nguyễn Duy Ngọc → next right after Bộ trưởng (seat 9)
     const dcNgoc = guests.find(g =>
         g.section_num === 'II' && g.name === 'Nguyễn Duy Ngọc'
     );
     if (dcNgoc) {
-        assignSeat('R1-12', {
+        assignSeat(`R1-${String(r1Right[1]).padStart(2, '0')}`, {
             ...dcNgoc, _css: 'section-2', _group: `guest-${dcNgoc.priority}`
         });
         assigned.add(dcNgoc.name);
@@ -367,16 +409,16 @@ function generateDefaultArrangement() {
         guests.filter(g => g.section_num === 'I' && !assigned.has(g.name))
     ).map(p => ({ ...p, _css: 'section-1', _group: `guest-${p.priority}` }));
 
-    // Split: first half → LEFT (seats 9,8,...), second half → RIGHT (seats 13,14,...)
+    // Split: first half → LEFT (seats 6,5,...), second half → RIGHT (seats 10,11,...)
     const leftLDBoCount = Math.ceil(allLDBo.length / 2);
     const leftLDBo = allLDBo.slice(0, leftLDBoCount);
     const rightLDBo = allLDBo.slice(leftLDBoCount);
 
-    // Fill Row 1 LEFT: seats 9,8,7,... with Lãnh đạo Bộ first (inner seats)
+    // Fill Row 1 LEFT: seats 6,5,4,... with Lãnh đạo Bộ first
     let r1LeftIdx = 0;
-    for (let i = 1; i < leftSeatsOrder.length; i++) {
+    for (let i = 1; i < r1Left.length; i++) {
         if (r1LeftIdx >= leftLDBo.length) break;
-        const sn = leftSeatsOrder[i]; // 9,8,7,...,1
+        const sn = r1Left[i];
         const code = `R1-${String(sn).padStart(2, '0')}`;
         assignSeat(code, leftLDBo[r1LeftIdx]);
         assigned.add(leftLDBo[r1LeftIdx].name);
@@ -392,9 +434,9 @@ function generateDefaultArrangement() {
     }));
 
     let ngIdx = 0;
-    for (let i = 1 + r1LeftIdx; i < leftSeatsOrder.length; i++) {
+    for (let i = 1 + r1LeftIdx; i < r1Left.length; i++) {
         if (ngIdx >= nguyenLDBo.length) break;
-        const sn = leftSeatsOrder[i];
+        const sn = r1Left[i];
         const code = `R1-${String(sn).padStart(2, '0')}`;
         if (seatMap[code]) continue;
         assignSeat(code, nguyenLDBo[ngIdx]);
@@ -402,11 +444,11 @@ function generateDefaultArrangement() {
         ngIdx++;
     }
 
-    // Fill Row 1 RIGHT (seats 13,14,...,20) with remaining Lãnh đạo Bộ
+    // Fill Row 1 RIGHT (seats 10,11,...,14) with remaining Lãnh đạo Bộ
     let r1RightIdx = 0;
-    for (let i = 2; i < rightSeatsOrder.length; i++) {
+    for (let i = 2; i < r1Right.length; i++) {
         if (r1RightIdx >= rightLDBo.length) break;
-        const sn = rightSeatsOrder[i];
+        const sn = r1Right[i];
         const code = `R1-${String(sn).padStart(2, '0')}`;
         assignSeat(code, rightLDBo[r1RightIdx]);
         assigned.add(rightLDBo[r1RightIdx].name);
@@ -421,9 +463,9 @@ function generateDefaultArrangement() {
         _css: 'section-2', _group: `guest-${p.priority}`
     }));
     let ngR1r = 0;
-    for (let i = 2 + r1RightIdx; i < rightSeatsOrder.length; i++) {
+    for (let i = 2 + r1RightIdx; i < r1Right.length; i++) {
         if (ngR1r >= nguyenLDBoForR1Right.length) break;
-        const sn = rightSeatsOrder[i];
+        const sn = r1Right[i];
         const code = `R1-${String(sn).padStart(2, '0')}`;
         if (seatMap[code]) continue;
         assignSeat(code, nguyenLDBoForR1Right[ngR1r]);
@@ -432,8 +474,12 @@ function generateDefaultArrangement() {
     }
 
     // ============================================================
-    // ROW 2 LEFT: PCT C07 đương nhiệm → Nguyên LĐC (Tổng cục trước → Cục)
+    // ROW 2 (16 seats: 8 left + 8 right)
+    // LEFT: PCT C07 đương nhiệm → Nguyên LĐC (Tổng cục trước → Cục)
+    // RIGHT: Nguyên LĐ Bộ (overflow) → đ/c đã từng CT tại C07
     // ============================================================
+
+    const r2LeftSps = seatsPerSideForRow(2); // 8
 
     // C07 Phó cục trưởng đương nhiệm
     const pctDuongNhiem = sortByPriority(cbcs.filter(o =>
@@ -457,33 +503,26 @@ function generateDefaultArrangement() {
         _css: 'section-3', _group: `guest-${p.priority}`
     }));
 
-    // Row 2 LEFT order: Nguyên LĐC (inner/aisle) → PCT C07 (outer/wall)
-    // Calculate how many nguyên seats fit on Row 2 LEFT
-    const nguyenSlotsR2 = SEATS_PER_SIDE - pctDuongNhiem.length;
-    // Prefer guest-only nguyên (not also in cbcs) for Row 2, so Nguyễn Tuấn Anh goes to Row 3
+    // Row 2 LEFT: PCT C07 at inner/aisle seats, Nguyên LĐC fills remaining outer seats
+    const nguyenSlotsR2 = r2LeftSps - pctDuongNhiem.length;
     const cbcsNames = new Set(cbcs.map(c => c.name));
     const nguyenLDCucGuestOnly = nguyenLDCuc.filter(p => !cbcsNames.has(p.name));
     const nguyenLDCucCbcsAlso = nguyenLDCuc.filter(p => cbcsNames.has(p.name));
     const allNguyenForR2 = [...nguyenLDTongCuc, ...nguyenLDCucGuestOnly, ...nguyenLDCucCbcsAlso];
-    const nguyenForRow2 = allNguyenForR2.slice(0, nguyenSlotsR2);
+    const nguyenForRow2 = allNguyenForR2.slice(0, Math.max(0, nguyenSlotsR2));
 
     const row2Left = [...nguyenForRow2, ...pctDuongNhiem];
 
-    let r2l = 0;
-    for (const sn of leftSeatsOrder) {
-        if (r2l >= row2Left.length) break;
+    let r2lIdx = 0;
+    for (const sn of leftSeatsOrderForRow(2)) {
+        if (r2lIdx >= row2Left.length) break;
         const code = `R2-${String(sn).padStart(2, '0')}`;
-        assignSeat(code, row2Left[r2l]);
-        assigned.add(row2Left[r2l].name);
-        r2l++;
+        assignSeat(code, row2Left[r2lIdx]);
+        assigned.add(row2Left[r2lIdx].name);
+        r2lIdx++;
     }
 
-    // ============================================================
-    // ROW 2 RIGHT: Nguyên LĐ Bộ (overflow) → đ/c đã từng CT tại C07
-    //   Khương & Việt: KHÔNG có chữ "nguyên"
-    //   Lê Ngọc Hải: excluded (goes to LEFT pool later)
-    // ============================================================
-
+    // ROW 2 RIGHT: Nguyên LĐ Bộ overflow only (Bùi Quang Việt → Row 3 RIGHT)
     const row2RightPool = [];
 
     // Nguyên lãnh đạo Bộ chưa xếp
@@ -494,31 +533,21 @@ function generateDefaultArrangement() {
         _css: 'section-2', _group: `guest-${p.priority}`
     }));
 
-    // Đ/c đã từng công tác tại C07 (Section V):
-    // Khương & Việt giữ nguyên chức vụ (Phó Cục trưởng), Lê Ngọc Hải → bên trái
-    sortByPriority(
-        guests.filter(g => g.section_num === 'V' && !assigned.has(g.name) && g.name !== 'Lê Ngọc Hải')
-    ).forEach(p => {
-        row2RightPool.push({
-            ...p, _css: 'section-5', _group: `guest-${p.priority}`
-        });
-    });
-
-    // Fill Row 2 RIGHT with row2RightPool
-    let r2r = 0;
-    for (const sn of rightSeatsOrder) {
-        if (r2r >= row2RightPool.length) break;
+    // Fill Row 2 RIGHT (8 seats) — only Nguyên LĐ Bộ
+    let r2rIdx = 0;
+    for (const sn of rightSeatsOrderForRow(2)) {
+        if (r2rIdx >= row2RightPool.length) break;
         const code = `R2-${String(sn).padStart(2, '0')}`;
-        assignSeat(code, row2RightPool[r2r]);
-        assigned.add(row2RightPool[r2r].name);
-        r2r++;
+        assignSeat(code, row2RightPool[r2rIdx]);
+        assigned.add(row2RightPool[r2rIdx].name);
+        r2rIdx++;
     }
 
     // ============================================================
     // Build LEFT and RIGHT pools (for rows 3+)
     // LEFT: Nguyên LĐC → Hưu trí C07 → Lãnh đạo Phòng 376 → Lê Ngọc Hải →
     //        Trưởng phòng C07 (8) → Phó phòng C07 → Trống (CBCS C07)
-    // RIGHT: Thư ký → Cục thuộc Bộ → Hiệp hội/UBND/CA phường →
+    // RIGHT: Bùi Quang Việt → Thư ký (TK7) → Cục thuộc Bộ → Hiệp hội/UBND/CA phường →
     //         PC07 → Lãnh đạo Phòng C07 → Báo chí → Trống
     // ============================================================
 
@@ -594,33 +623,19 @@ function generateDefaultArrangement() {
         unit: p.dept, _css: 'cbcs', _group: 'cbcs'
     }));
 
-    // Reorder for Row 9: TP at inner seats (near aisle), Phó TP + remaining 376 at outer
-    // Row 3-8 = 6 rows × 10 seats = 60 items from start of leftPool
-    const row9StartIdx = 6 * SEATS_PER_SIDE; // = 60
-    const itemsBeforeTP = leftPool.length; // III + Hưu trí + 376 items
-
-    if (itemsBeforeTP > row9StartIdx) {
-        // Some 376 items spill into Row 9 — pull them out and re-add after TP
-        const spillCount = itemsBeforeTP - row9StartIdx;
-        const spillItems = leftPool.splice(leftPool.length - spillCount, spillCount);
-        // Row 9 order: TP (inner) → Phó TP → spill 376 (outer)
-        leftPool.push(...truongPhongList);
-        if (phoTPItem) leftPool.push(phoTPItem);
-        leftPool.push(...spillItems);
-    } else {
-        // No spill — just add TP then Phó TP
-        leftPool.push(...truongPhongList);
-        if (phoTPItem) leftPool.push(phoTPItem);
-    }
+    // Add TP/PTP after all guest items (no spillover reorder to avoid splitting groups)
+    leftPool.push(...truongPhongList);
+    if (phoTPItem) leftPool.push(phoTPItem);
     leftPool.push(...phoPhongList);
 
     // --- RIGHT POOL (rows 3-10) ---
     const rightPool = [];
 
     // Calculate remaining Row 2 RIGHT seats to fill
-    const row2RightRemaining = SEATS_PER_SIDE - row2RightPool.length;
+    const r2RightSps = seatsPerSideForRow(2);
+    const row2RightRemaining = r2RightSps - row2RightPool.length;
 
-    // 1) Cục nghiệp vụ (Section VII, trừ thư ký) → renamed "Cục thuộc Bộ"
+    // 2) Cục nghiệp vụ (Section VII, trừ thư ký) → renamed "Cục thuộc Bộ"
     const cucThuocBoAll = sortByPriority(
         guests.filter(g =>
             g.section_num === 'VII' && !assigned.has(g.name) &&
@@ -631,12 +646,22 @@ function generateDefaultArrangement() {
         _css: 'section-7', _group: `guest-${p.priority}`
     }));
 
-    // First batch fills remaining Row 2 RIGHT seats
-    const cucThuocBoR2 = cucThuocBoAll.slice(0, row2RightRemaining);
-    const cucThuocBoR3plus = cucThuocBoAll.slice(row2RightRemaining);
+    // First batch fills remaining Row 2 RIGHT seats (before Việt & TK7)
+    const cucThuocBoR2 = cucThuocBoAll.slice(0, Math.max(0, row2RightRemaining));
+    const cucThuocBoR3plus = cucThuocBoAll.slice(Math.max(0, row2RightRemaining));
     rightPool.push(...cucThuocBoR2);
 
-    // 2) Thư ký lãnh đạo Bộ (TK7) — goes to Row 3 RIGHT seat 11 (below Võ Thái Hòa)
+    // 0) Bùi Quang Việt → đầu hàng 3 bên phải (innermost seat)
+    const buiQuangViet = guests.find(g =>
+        g.name === 'Bùi Quang Việt' && !assigned.has(g.name)
+    );
+    if (buiQuangViet) {
+        rightPool.push({
+            ...buiQuangViet, _css: 'section-5', _group: `guest-${buiQuangViet.priority}`
+        });
+    }
+
+    // 1) Thư ký lãnh đạo Bộ (TK7) — right after Bùi Quang Việt
     guests.filter(g =>
         g.section_num === 'VII' && !assigned.has(g.name) &&
         /thư ký/i.test(g.name)
@@ -664,21 +689,21 @@ function generateDefaultArrangement() {
     }));
 
     // 5) Lãnh đạo Phòng C07 - split between left and right for balance
-    // Left side fills rows 3-10 only; Row 11 LEFT = CBCS C07
     let leftCapacity = 0;
-    for (const sn of leftSeatsOrder) {
+    for (const sn of leftSeatsOrderForRow(2)) {
         const code = `R2-${String(sn).padStart(2, '0')}`;
         if (!seatMap[code]) leftCapacity++;
     }
-    leftCapacity += (TOTAL_ROWS - 3) * SEATS_PER_SIDE; // rows 3-10 only (8 rows)
+    // Add rows 3-10 left capacity (variable per row)
+    for (let rn = 3; rn <= TOTAL_ROWS - 1; rn++) {
+        leftCapacity += seatsPerSideForRow(rn);
+    }
 
     const leftFit = leftPool.slice(0, leftCapacity);
     const leftOverflow = leftPool.slice(leftCapacity);
-    // Overflow from left → right pool (LĐ Phòng C07 balance)
     leftOverflow.forEach(p => rightPool.push(p));
 
     // --- RIGHT POOL (Row 11 only) - Báo chí truyền thông ---
-    // These are separated and will be placed ONLY on Row 11 RIGHT
     const mediaPool = [];
     sortByPriority(
         guests.filter(g =>
@@ -696,7 +721,7 @@ function generateDefaultArrangement() {
     let rightIdx = 0;
 
     // Fill remaining Row 2 LEFT empty seats
-    for (const sn of leftSeatsOrder) {
+    for (const sn of leftSeatsOrderForRow(2)) {
         const code = `R2-${String(sn).padStart(2, '0')}`;
         if (seatMap[code]) continue;
         if (leftIdx >= leftFit.length) break;
@@ -707,7 +732,7 @@ function generateDefaultArrangement() {
     }
 
     // Fill remaining Row 2 RIGHT empty seats
-    for (const sn of rightSeatsOrder) {
+    for (const sn of rightSeatsOrderForRow(2)) {
         const code = `R2-${String(sn).padStart(2, '0')}`;
         if (seatMap[code]) continue;
         if (rightIdx >= rightPool.length) break;
@@ -717,9 +742,9 @@ function generateDefaultArrangement() {
         rightIdx++;
     }
 
-    // Fill rows 3-10 with left and right pools
+    // Fill rows 3-10 with left and right pools (variable seats per row)
     for (let rowNum = 3; rowNum <= TOTAL_ROWS - 1; rowNum++) {
-        for (const sn of leftSeatsOrder) {
+        for (const sn of leftSeatsOrderForRow(rowNum)) {
             if (leftIdx >= leftFit.length) break;
             const code = `R${rowNum}-${String(sn).padStart(2, '0')}`;
             const person = leftFit[leftIdx];
@@ -728,7 +753,7 @@ function generateDefaultArrangement() {
             leftIdx++;
         }
 
-        for (const sn of rightSeatsOrder) {
+        for (const sn of rightSeatsOrderForRow(rowNum)) {
             if (rightIdx >= rightPool.length) break;
             const code = `R${rowNum}-${String(sn).padStart(2, '0')}`;
             const person = rightPool[rightIdx];
@@ -743,7 +768,7 @@ function generateDefaultArrangement() {
     // ============================================================
 
     // Row 11 LEFT: all CBCS C07
-    for (const sn of leftSeatsOrder) {
+    for (const sn of leftSeatsOrderForRow(TOTAL_ROWS)) {
         const code = `R${TOTAL_ROWS}-${String(sn).padStart(2, '0')}`;
         assignSeat(code, {
             name: 'CBCS C07', rank: '', position: '', unit: 'C07',
@@ -753,7 +778,7 @@ function generateDefaultArrangement() {
 
     // Row 11 RIGHT: Báo chí truyền thông first, then CBCS C07
     let mediaIdx = 0;
-    for (const sn of rightSeatsOrder) {
+    for (const sn of rightSeatsOrderForRow(TOTAL_ROWS)) {
         const code = `R${TOTAL_ROWS}-${String(sn).padStart(2, '0')}`;
         if (mediaIdx < mediaPool.length) {
             assignSeat(code, mediaPool[mediaIdx]);
@@ -770,7 +795,8 @@ function generateDefaultArrangement() {
     // Fill ALL remaining empty seats with "CBCS C07"
     // ============================================================
     for (let rowNum = 1; rowNum <= TOTAL_ROWS; rowNum++) {
-        for (let s = 1; s <= SEATS_PER_ROW; s++) {
+        const sps = seatsPerSideForRow(rowNum);
+        for (let s = 1; s <= sps * 2; s++) {
             const code = `R${rowNum}-${String(s).padStart(2, '0')}`;
             if (!seatMap[code]) {
                 assignSeat(code, {
@@ -788,6 +814,7 @@ function generateDefaultArrangement() {
         console.warn(`${rightPool.length - rightIdx} people unassigned on RIGHT!`);
     }
 }
+
 
 /**
  * Center-out seating order for a row.
@@ -1110,7 +1137,7 @@ function undoChange() {
 }
 
 function saveChanges() {
-    localStorage.setItem('seatingArrangement_65_v3', JSON.stringify(seatMap));
+    localStorage.setItem('seatingArrangement_65_v7', JSON.stringify(seatMap));
     showToast('Đã lưu sơ đồ!', 'success');
 }
 
@@ -1124,7 +1151,8 @@ function exportExcel() {
 
     const allCodes = [];
     for (let r = 1; r <= TOTAL_ROWS; r++) {
-        for (let s = 1; s <= SEATS_PER_ROW; s++) {
+        const sps = seatsPerSideForRow(r);
+        for (let s = 1; s <= sps * 2; s++) {
             allCodes.push(`R${r}-${String(s).padStart(2, '0')}`);
         }
     }
@@ -1138,8 +1166,9 @@ function exportExcel() {
         const parts = code.substring(1).split('-');
         const rowNum = parseInt(parts[0]);
         const seatNum = parseInt(parts[1]);
+        const sps = seatsPerSideForRow(rowNum);
         const hasTable = rowNum <= TABLE_ROWS ? 'Có' : 'Không';
-        const side = seatNum <= SEATS_PER_SIDE ? 'Trái' : 'Phải';
+        const side = seatNum <= sps ? 'Trái' : 'Phải';
 
         const groupLabels = {
             'guest-1': 'I. Lãnh đạo Bộ',
